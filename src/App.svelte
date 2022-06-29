@@ -1,46 +1,23 @@
 <script lang="ts">
   import TemperatureInputs from './components/temperatureInputs.svelte';
+import { recalculate } from './helpers/recalculate';
   import type { TemperatureInputChangeEvent } from './types/temperature';
 
   let temperatures = {
     kelvin: 0,
-    celsius: 0,
-    fahrenheit: 0,
+    celsius: -273.15,
+    fahrenheit: -459.67,
   };
 
-  function recalculate(event: TemperatureInputChangeEvent) {
+  const onRecalculate = ( event: TemperatureInputChangeEvent) => {
     const { scaleFrom, temperature } = event.detail;
-    switch (scaleFrom) {
-      case 'kelvin':
-        temperatures = {
-          kelvin: temperature,
-          fahrenheit: (9 / 5) * (temperature - 273) + 32,
-          celsius: temperature - 273.15,
-        };
-        break;
-      case 'celsius':
-        temperatures = {
-          kelvin: temperature + 273.15,
-          fahrenheit: (9 / 5) * temperature + 32,
-          celsius: temperature,
-        };
-        break;
-
-      case 'fahrenheit':
-        temperatures = {
-          kelvin: (5 / 9) * (temperature - 32) + 273.15,
-          fahrenheit: temperature,
-          celsius: (temperature - 32) / 1.8,
-        };
-        break;
-    }
-    console.log(temperature);
+    temperatures = recalculate(scaleFrom, temperature, temperatures)
   }
 </script>
 
 <main>
   <h1>Farensius</h1>
-  <TemperatureInputs {temperatures} on:recalculate={recalculate} />
+  <TemperatureInputs {temperatures} on:recalculate={onRecalculate} />
   <div>
     {temperatures.kelvin} | {temperatures.celsius} | {temperatures.fahrenheit}
   </div>

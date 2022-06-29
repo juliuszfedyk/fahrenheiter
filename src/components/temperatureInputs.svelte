@@ -19,17 +19,23 @@
   type="number"
   value={temperatures.kelvin}
   name="kelvin"
+  step="0.01"
+  min='0'
   on:input={e => onInputChange('kelvin', e)}
 />
 <input
   type="number"
   value={temperatures.celsius}
   name="celsius"
+  step="0.01"
+  min="-273.15"
   on:input={e => onInputChange('celsius', e)}
 />
 <input
   type="number"
   value={temperatures.fahrenheit}
   name="fahrenheit"
+  step="0.01"
+  min="-459.67"
   on:input={e => onInputChange('fahrenheit', e)}
 />
