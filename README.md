@@ -41,4 +41,5 @@ Colors were taken from [this pattern](https://coolors.co/palette/e63946-f1faee-a
 - It took me under 10 hours, which I think is the beauty of writting small projects using Svelte.
 - I worked alone so I decided to simply commit straight to the `main` branch.
 - I have a lot of extra fun ideas I could add to it, and maybe I will if I'll have some free time.
+- TODO: add eslint and check in githooks: commit
 - TODO: add a color change based on Kelvin temperature to some elements.
