@@ -30,9 +30,6 @@
       'Helvetica Neue', sans-serif;
   }
 
-  :root {
-  }
-
   main {
     padding: 1em;
     margin: 0 auto;
@@ -45,9 +42,9 @@
   h1 {
     color: var(--theme-colors-primary);
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 100;
-    line-height: 1.1;
+    line-height: 48px;
     font-family: 'Nixie One', cursive;
   }
 
@@ -59,7 +56,7 @@
 
   @media (min-width: 768px) {
     h1 {
-      font-size: 4rem;
+      font-size: 48px;
     }
   }
 </style>

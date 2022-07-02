@@ -37,6 +37,7 @@
     type="text"
     value={$temperatureStore}
     name={scaleName}
+    id={scaleName}
     pattern={temperatureRxStr}
     on:input={e => onInput(scaleName, e)}
     on:keypress={onKeyPress}
