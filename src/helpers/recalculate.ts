@@ -22,6 +22,7 @@ export const recalculate = (
   scaleFrom: TemperatureScales,
   temperature: string,
 ): void => {
+  if (temperature === '') temperature = '0';
   let temperatureNr = parseFloat(temperature);
   const invalidFormat = !isTemperatureFormatValid(temperature);
   const tooCold = itsTooCold(scaleFrom, temperature);

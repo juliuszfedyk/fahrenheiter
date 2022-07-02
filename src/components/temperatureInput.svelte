@@ -43,7 +43,7 @@
   };
 </script>
 
-<div class="inputElement" class:invalid={!valid}>
+<div class="inputWrapper" class:invalid={!valid}>
   <label for={scaleName}>{scaleName}</label><br />
   <input
     type="text"
@@ -69,14 +69,22 @@
     text-align: end;
   }
 
-  .inputElement {
+  .inputWrapper {
     margin: 5px;
     padding: 5px;
     background-color: var(--theme-colors-background-accent);
     border-radius: 5px;
   }
 
-  .inputElement.invalid {
+  .inputWrapper:first-child {
+    margin-left: 0;
+  }
+
+  .inputWrapper:last-child {
+    margin-right: 0;
+  }
+
+  .inputWrapper.invalid {
     background-color: var(--theme-colors-primary);
   }
 </style>

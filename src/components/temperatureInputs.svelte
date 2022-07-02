@@ -23,7 +23,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    max-width: 800px;
   }
   @media (min-width: 768px) {
     .temperatureInputs {

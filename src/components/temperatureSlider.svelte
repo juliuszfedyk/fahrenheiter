@@ -22,12 +22,20 @@
     min="0"
     max="10000"
     on:input={onInput}
+    aria-label="Kelvin slider"
   />
+  <span class="minTemp">0&deg;K</span>
+  <span class="maxTemp">10000&deg;K</span>
 </div>
 
 <style>
   .sliderWrapper {
     width: 100%;
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--theme-colors-background-accent);
+    border-radius: 10px;
+    box-sizing: border-box;
   }
   input[type='range'] {
     -webkit-appearance: none; /* Override default CSS styles */
@@ -36,7 +44,7 @@
     background: transparent;
   }
   input[type='range']::-webkit-slider-runnable-track {
-    background-color: var(--theme-colors-background-accent);
+    background-color: var(--theme-colors-primary_dark);
     border-radius: 5px;
     height: 20px;
   }
@@ -51,5 +59,11 @@
   }
   input[type='range'].outOfRange::-webkit-slider-thumb {
     background-color: var(--theme-colors-primary_dark);
+  }
+  .minTemp {
+    float: left;
+  }
+  .maxTemp {
+    float: right;
   }
 </style>

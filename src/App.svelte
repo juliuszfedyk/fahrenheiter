@@ -14,8 +14,16 @@
     </div>
     <h1>Fahrenheiter</h1>
     <TemperatureInputs />
-    <div>
-      {$kelvin}&deg;K | {$celsius}&deg;C | {$fahrenheit}&deg;F
+    <div class="values">
+      <div>
+        {$kelvin}&deg;K
+      </div>
+      <div>
+        {$celsius}&deg;C
+      </div>
+      <div>
+        {$fahrenheit}&deg;F
+      </div>
     </div>
     <TemperatureSlider />
   </ThemeWrapper>
@@ -39,6 +47,7 @@
     flex-direction: column;
     align-items: center;
     min-width: 300px;
+    max-width: 800px;
   }
 
   h1 {
@@ -56,9 +65,23 @@
     top: 10px;
   }
 
+  .values {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .values div {
+    padding: 5px;
+  }
+
   @media (min-width: 768px) {
     h1 {
       font-size: 48px;
+    }
+    .values {
+      flex-direction: row;
     }
   }
 </style>
