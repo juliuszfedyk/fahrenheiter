@@ -1,4 +1,4 @@
-import type { TemperatureScales } from './../types/temperature';
+import type { TemperatureScales } from '../types/temperature.types';
 import { Writable, writable } from 'svelte/store';
 import { minTemperatures } from '../helpers/validation';
 // note: the stores are separate to avoid updating field value when

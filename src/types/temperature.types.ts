@@ -1,5 +1,3 @@
-import type { Writable } from 'svelte/store';
-
 export type TemperatureScales = 'kelvin' | 'celsius' | 'fahrenheit';
 
 export type Temperatures = {

@@ -1,4 +1,4 @@
-import type { Temperatures } from './../types/temperature';
+import type { Temperatures } from '../types/temperature.types';
 export const temperatureRx = '/^(-?[0-9]*(.[0-9]{0,1})?$/';
 export const isTemperatureFormatValid = (temp: string) =>
   temp.match(temperatureRx);

@@ -1,20 +1,32 @@
 <script lang="ts">
   import TemperatureInputs from './components/temperatureInputs.svelte';
-  import { recalculate } from './helpers/recalculate';
-  import type {} from './types/temperature';
+  import type {} from './types/temperature.types';
   import { kelvin, celsius, fahrenheit } from './stores/temperatures';
+  import { ThemeWrapper, ThemeToggle } from 'svelte-themer';
+  import { themes } from './themes/themes';
 </script>
 
 <main>
-  <h1>Farensius</h1>
-  <TemperatureInputs />
-  <div>
-    {$kelvin} | {$celsius} | {$fahrenheit}
-  </div>
+  <ThemeWrapper key="fahrenheiter__theme" {themes}>
+    <div class="togglePlacer">
+      <ThemeToggle />
+    </div>
+    <h1>Farensius</h1>
+    <TemperatureInputs />
+    <div>
+      {$kelvin} | {$celsius} | {$fahrenheit}
+    </div>
+  </ThemeWrapper>
 </main>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=PT+Sans+Narrow&display=swap');
+
+  :global(html) {
+    background-color: var(--theme-colors-background, initial);
+    color: var(--theme-colors-text, initial);
+    font-size: 18px;
+  }
 
   :root {
     font-family: 'PT Sans Narrow', sans-serif, Ubuntu, Cantarell, 'Open Sans',
@@ -22,19 +34,25 @@
   }
 
   main {
-    text-align: center;
     padding: 1em;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
-    color: #ff3e00;
+    color: var(--theme-colors-primary);
     text-transform: uppercase;
     font-size: 4rem;
     font-weight: 100;
     line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
     font-family: 'Nixie One', cursive;
+  }
+
+  .togglePlacer {
+    position: absolute;
+    right: 10px;
+    top: 10px;
   }
 </style>
