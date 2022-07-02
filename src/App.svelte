@@ -26,11 +26,11 @@
     background-color: var(--theme-colors-background, initial);
     color: var(--theme-colors-text, initial);
     font-size: 18px;
+    font-family: 'PT Sans Narrow', sans-serif, Ubuntu, Cantarell, 'Open Sans',
+      'Helvetica Neue', sans-serif;
   }
 
   :root {
-    font-family: 'PT Sans Narrow', sans-serif, Ubuntu, Cantarell, 'Open Sans',
-      'Helvetica Neue', sans-serif;
   }
 
   main {
@@ -39,12 +39,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 300px;
   }
 
   h1 {
     color: var(--theme-colors-primary);
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 100;
     line-height: 1.1;
     font-family: 'Nixie One', cursive;
@@ -54,5 +55,11 @@
     position: absolute;
     right: 10px;
     top: 10px;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 4rem;
+    }
   }
 </style>

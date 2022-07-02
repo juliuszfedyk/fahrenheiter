@@ -4,6 +4,9 @@ export const temperatureRx = new RegExp(temperatureRxStr);
 export const isTemperatureFormatValid = (temp: string): boolean =>
   !!temp.match(temperatureRx)?.[0];
 
+export const itsTooCold = (scale: string, temp: string) =>
+  parseFloat(minTemperatures[scale]) > parseFloat(temp);
+
 export const isNumericPeriodOrMinus = (keyCode: string) =>
   keyCode.includes('Digit') || keyCode === 'Period' || keyCode === 'Minus';
 
