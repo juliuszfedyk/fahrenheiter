@@ -1,17 +1,6 @@
-import { onDestroy } from 'svelte';
-
 import type { Formulas, TemperatureScales } from './../types/temperature';
-const temperatures = {
-  kelvin: '0',
-  celsius: '0',
-  fahrenheit: '0',
-};
+
 import temperatureStores from '../stores/temperatures';
-const unsubscribes = Object.keys(temperatureStores).map(store =>
-  temperatureStores[store].subscribe(temp => (temperatures[store] = temp)),
-);
-// const unsubscribe = () => unsubscribes.forEach(unsubscribe => unsubscribe());
-// onDestroy(unsubscribe);
 
 const formulas: Formulas = {
   kelvin: {
@@ -32,7 +21,7 @@ export const recalculate = (
   scaleFrom: TemperatureScales,
   temperature: string,
 ): void => {
-  Object.keys(temperatures).forEach(scale => {
+  Object.keys(temperatureStores).forEach(scale => {
     if (scale === scaleFrom) return;
     const temperatureNr = parseFloat(temperature);
     const newTemp = formulas[scaleFrom][scale](temperatureNr).toFixed(2);
