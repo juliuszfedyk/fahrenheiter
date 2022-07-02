@@ -26,8 +26,11 @@ export const recalculate = (
   const invalidFormat = !isTemperatureFormatValid(temperature);
   const tooCold = itsTooCold(scaleFrom, temperature);
   Object.keys(temperatureStores).forEach(scale => {
-    if (scale === scaleFrom) return;
-    let newTemp: string | undefined;
+    if (scale === scaleFrom) {
+      temperatureStores[scale].update(() => temperature);
+      return;
+    }
+    let newTemp: string;
     if (invalidFormat) {
       newTemp = "Sorry Can't process that :(";
     } else if (tooCold) {

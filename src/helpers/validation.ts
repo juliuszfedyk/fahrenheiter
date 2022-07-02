@@ -1,5 +1,5 @@
 import type { Temperatures } from '../types/temperature.types';
-export const temperatureRxStr = '^-?[0-9]*(.[0-9]*)?$';
+export const temperatureRxStr = '^-?[0-9]*(.[0-9]*)?([Ee][+-][0-9]*)?$';
 export const temperatureRx = new RegExp(temperatureRxStr);
 export const isTemperatureFormatValid = (temp: string): boolean =>
   !!temp.match(temperatureRx)?.[0];

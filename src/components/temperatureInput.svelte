@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { afterUpdate, beforeUpdate } from 'svelte';
+
   import type { Writable } from 'svelte/store';
   import { recalculate } from '../helpers/recalculate';
   import {
@@ -8,9 +10,25 @@
   } from '../helpers/validation';
   import type { TemperatureScales } from '../types/temperature.types';
 
-  export let temperatureStore: Writable<string> | undefined;
-  export let scaleName: TemperatureScales | undefined;
+  export let temperatureStore: Writable<string>;
+  export let scaleName: TemperatureScales;
   let valid = true;
+  let input: HTMLInputElement;
+  let cursorPosition = 0;
+
+  beforeUpdate(() => {
+    if (input) {
+      cursorPosition = input.selectionStart;
+    }
+  });
+
+  afterUpdate(() => {
+    if (input) {
+      input.setSelectionRange(cursorPosition, cursorPosition);
+    }
+  });
+
+  temperatureStore.subscribe(temp => (valid = isTemperatureFormatValid(temp)));
 
   const onKeyPress = (event: KeyboardEvent) => {
     if (!isNumericPeriodOrMinus(event.code)) {
@@ -23,25 +41,19 @@
     valid = isTemperatureFormatValid(value);
     recalculate(scaleFrom, value);
   };
-
-  const onPaste = (event: ClipboardEvent) => {
-    if (!isTemperatureFormatValid(event.clipboardData.getData('text/plain'))) {
-      event.preventDefault();
-    }
-  };
 </script>
 
 <div class="inputElement" class:invalid={!valid}>
   <label for={scaleName}>{scaleName}</label><br />
   <input
     type="text"
+    bind:this={input}
     value={$temperatureStore}
     name={scaleName}
     id={scaleName}
     pattern={temperatureRxStr}
     on:input={e => onInput(scaleName, e)}
     on:keypress={onKeyPress}
-    on:paste={onPaste}
   />
 </div>
 

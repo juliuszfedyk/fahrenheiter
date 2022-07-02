@@ -4,6 +4,7 @@
   import { kelvin, celsius, fahrenheit } from './stores/temperatures';
   import { ThemeWrapper, ThemeToggle } from 'svelte-themer';
   import { themes } from './themes/themes';
+  import TemperatureSlider from './components/temperatureSlider.svelte';
 </script>
 
 <main>
@@ -16,6 +17,7 @@
     <div>
       {$kelvin}&deg;K | {$celsius}&deg;C | {$fahrenheit}&deg;F
     </div>
+    <TemperatureSlider />
   </ThemeWrapper>
 </main>
 
