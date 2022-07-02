@@ -11,7 +11,7 @@
     <div class="togglePlacer">
       <ThemeToggle />
     </div>
-    <h1>Farensius</h1>
+    <h1>Fahrenheiter</h1>
     <TemperatureInputs />
     <div>
       {$kelvin}&deg;K | {$celsius}&deg;C | {$fahrenheit}&deg;F
