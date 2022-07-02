@@ -37,8 +37,8 @@ Colors were taken from [this pattern](https://coolors.co/palette/e63946-f1faee-a
 
 - I had to move from Webstorm to VSCode, as Svelte + Pretter + Webstorm did not work.
 - I tried avoiding scientific notation by using a formatted text field, but finally decided against it. Still the fields are text type. I would do a nice formatted field accepting M/G/T/P etc.notation had I have more time.
-- otherwise I tried to keep it simple, some decisions that might struck as weird are explained in the comments in the code.
 - I really enjoyed this mini project, I haven't use Svelte in years and I forgot about some of it's limitations and it was great fun to work around them.
 - It took me under 10 hours, which I think is the beauty of writting small projects using Svelte.
 - I worked alone so I decided to simply commit straight to the `main` branch.
 - I have a lot of extra fun ideas I could add to it, and maybe I will if I'll have some free time.
+- TODO: add a color change based on Kelvin temperature to some elements.
