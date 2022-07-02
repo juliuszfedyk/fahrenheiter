@@ -1,4 +1,4 @@
-import type { Formulas, TemperatureScales } from './../types/temperature';
+import type { Formulas, TemperatureScales } from '../types/temperature.types';
 
 import temperatureStores from '../stores/temperatures';
 
