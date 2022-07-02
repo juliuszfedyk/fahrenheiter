@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     .temperatureInputs {
       flex-direction: row;
     }

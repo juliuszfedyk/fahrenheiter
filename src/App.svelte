@@ -84,7 +84,7 @@
     padding: 5px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     h1 {
       font-size: 48px;
     }
