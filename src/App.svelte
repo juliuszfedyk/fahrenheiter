@@ -14,7 +14,7 @@
     <h1>Farensius</h1>
     <TemperatureInputs />
     <div>
-      {$kelvin} | {$celsius} | {$fahrenheit}
+      {$kelvin}&deg;K | {$celsius}&deg;C | {$fahrenheit}&deg;F
     </div>
   </ThemeWrapper>
 </main>

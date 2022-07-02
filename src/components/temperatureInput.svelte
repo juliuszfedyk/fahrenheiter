@@ -4,22 +4,24 @@
   import {
     isNumericPeriodOrMinus,
     isTemperatureFormatValid,
-    temperatureRx,
+    temperatureRxStr,
   } from '../helpers/validation';
   import type { TemperatureScales } from '../types/temperature.types';
 
   export let temperatureStore: Writable<string> | undefined;
   export let scaleName: TemperatureScales | undefined;
+  let valid = true;
 
   const onKeyPress = (event: KeyboardEvent) => {
-    console.log(event);
     if (!isNumericPeriodOrMinus(event.code)) {
       event.preventDefault();
     }
   };
 
   const onInput = (scaleFrom: TemperatureScales, event: Event) => {
-    recalculate(scaleFrom, (event.target as HTMLInputElement).value);
+    const value = (event.target as HTMLInputElement).value;
+    valid = isTemperatureFormatValid(value);
+    recalculate(scaleFrom, value);
   };
 
   const onPaste = (event: ClipboardEvent) => {
@@ -29,13 +31,13 @@
   };
 </script>
 
-<div class="inputElement">
+<div class="inputElement" class:invalid={!valid}>
   <label for={scaleName}>{scaleName}</label><br />
   <input
     type="text"
     value={$temperatureStore}
     name={scaleName}
-    pattern={temperatureRx}
+    pattern={temperatureRxStr}
     on:input={e => onInput(scaleName, e)}
     on:keypress={onKeyPress}
     on:paste={onPaste}
@@ -59,5 +61,9 @@
     padding: 5px;
     background-color: var(--theme-colors-background-accent);
     border-radius: 5px;
+  }
+
+  .inputElement.invalid {
+    background-color: var(--theme-colors-primary);
   }
 </style>

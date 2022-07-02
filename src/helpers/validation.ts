@@ -1,7 +1,8 @@
 import type { Temperatures } from '../types/temperature.types';
-export const temperatureRx = '/^(-?[0-9]*(.[0-9]{0,1})?$/';
-export const isTemperatureFormatValid = (temp: string) =>
-  temp.match(temperatureRx);
+export const temperatureRxStr = '^-?[0-9]*(.[0-9]*)?$';
+export const temperatureRx = new RegExp(temperatureRxStr);
+export const isTemperatureFormatValid = (temp: string): boolean =>
+  !!temp.match(temperatureRx)?.[0];
 
 export const isNumericPeriodOrMinus = (keyCode: string) =>
   keyCode.includes('Digit') || keyCode === 'Period' || keyCode === 'Minus';

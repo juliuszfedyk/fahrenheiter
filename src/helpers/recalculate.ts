@@ -1,6 +1,7 @@
 import type { Formulas, TemperatureScales } from '../types/temperature.types';
 
 import temperatureStores from '../stores/temperatures';
+import { isTemperatureFormatValid } from './validation';
 
 const formulas: Formulas = {
   kelvin: {
@@ -24,8 +25,12 @@ export const recalculate = (
   let temperatureNr = parseFloat(temperature);
   Object.keys(temperatureStores).forEach(scale => {
     if (scale === scaleFrom) return;
-    const newTemp = formulas[scaleFrom][scale](temperatureNr).toFixed(2);
-    console.log(scale, typeof newTemp, newTemp);
+    let newTemp: string | undefined;
+    if (!isTemperatureFormatValid(temperature)) {
+      newTemp = "Sorry Can't process that :(";
+    } else {
+      newTemp = formulas[scaleFrom][scale](temperatureNr).toFixed(2);
+    }
     temperatureStores[scale].update(() => newTemp);
   });
 };
