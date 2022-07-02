@@ -21,11 +21,11 @@ export const recalculate = (
   scaleFrom: TemperatureScales,
   temperature: string,
 ): void => {
+  let temperatureNr = parseFloat(temperature);
   Object.keys(temperatureStores).forEach(scale => {
     if (scale === scaleFrom) return;
-    const temperatureNr = parseFloat(temperature);
     const newTemp = formulas[scaleFrom][scale](temperatureNr).toFixed(2);
-    console.log(scale, typeof newTemp);
+    console.log(scale, typeof newTemp, newTemp);
     temperatureStores[scale].update(() => newTemp);
   });
 };

@@ -13,6 +13,7 @@
   export let scaleName: TemperatureScales | undefined;
 
   const onKeyPress = (event: KeyboardEvent) => {
+    console.log(event);
     if (!isNumericPeriodOrMinus(event.code)) {
       event.preventDefault();
     }
@@ -34,7 +35,7 @@
   value={$temperatureStore}
   name={scaleName}
   pattern={temperatureRx}
-  on:input={e => onInput('kelvin', e)}
+  on:input={e => onInput(scaleName, e)}
   on:keypress={onKeyPress}
   on:paste={onPaste}
 />
