@@ -33,7 +33,7 @@ export const recalculate = (
     }
     let newTemp: string;
     if (invalidFormat) {
-      newTemp = "Sorry Can't process that :(";
+      newTemp = "Sorry, can't process that :(";
     } else if (tooCold) {
       newTemp = "That's impossibly cold :(";
     } else {
