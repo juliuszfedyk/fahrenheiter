@@ -27,6 +27,10 @@
     </div>
     <TemperatureSlider />
   </ThemeWrapper>
+
+  <div class="credits">
+    <a href="https://github.com/juliuszfedyk/fahrenheiter">github</a>
+  </div>
 </main>
 
 <style>
@@ -58,6 +62,10 @@
     line-height: 48px;
     font-family: 'Nixie One', cursive;
   }
+  a,
+  a:visited {
+    color: var(--theme-colors-secondary);
+  }
 
   .togglePlacer {
     position: absolute;
@@ -83,5 +91,11 @@
     .values {
       flex-direction: row;
     }
+  }
+
+  .credits {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
   }
 </style>
