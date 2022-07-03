@@ -2,6 +2,8 @@
 
 A simple app for recalculating from Kelvin, Celsius or Fahrenheit. ([GitHub](https://github.com/juliuszfedyk/fahrenheiter))
 
+Developed with node `18.4.0`, should work with LTS
+
 ### To run locally:
 
 ```
@@ -33,14 +35,15 @@ For theming I found [this article](https://dev.to/josef/theming-in-svelte-with-c
 
 Colors were taken from [this pattern](https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557)
 
-Developed with node `18.4.0`, should work with LTS
-
 ## The good and the bad
 
+(This info would not go into an official doc, maybe into PR description ;-))
+
 - I had to move from Webstorm to VSCode, as Svelte + Pretter + Webstorm did not work.
-- I tried avoiding scientific notation by using a formatted text field, but finally decided against it. Still the fields are text type. I would do a nice formatted field accepting M/G/T/P etc.notation had I have more time.
 - I really enjoyed this mini project, I haven't use Svelte in years and I forgot about some of it's limitations and it was great fun to work around them.
-- It took me under 10 hours, which I think is the beauty of writting small projects using Svelte.
+- It took me a bit over 10 hours, which I think is the beauty of writting small projects using Svelte.
 - I worked alone so I decided to simply commit straight to the `main` branch.
-- I have a lot of extra fun ideas I could add to it, and maybe I will if I'll have some free time.
-- As Added feature I implemented some examples of metling / boiling points.
+- I added the Kelvin scale
+- As an additional feature I implemented some examples of metling / boiling points.
+- No tests - as the app is rather simple, and I wouldn't have enought time to learn svelte unit test scripting, but that would be next on my list if I would spend on it a whole week.
+- I tried avoiding scientific notation by using a formatted text field, but finally decided against it. Still the fields are text type as I am thinking a nice descriptive format with K/G/M/P/T notation might be nicer for average user and would be on my todo list.
