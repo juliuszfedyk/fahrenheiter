@@ -43,6 +43,5 @@
     font-size: var(--theme-fonts-sizes-medium);
     color: var(--theme-colors-secondary);
     outline: none;
-    text-align: end;
   }
 </style>
