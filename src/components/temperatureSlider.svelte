@@ -7,7 +7,6 @@
 
   $: outOfRange = parseFloat($kelvin) > maxTemp;
   const onInput = (event: Event) => {
-    console.log(outOfRange);
     const temp = (event.target as HTMLInputElement).value + '.00';
     kelvin.update(() => temp);
     recalculate('kelvin', temp);
