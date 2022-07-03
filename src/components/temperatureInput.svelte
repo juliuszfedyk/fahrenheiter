@@ -6,6 +6,7 @@
   import {
     isNumericPeriodOrMinusOrPlus,
     isTemperatureFormatValid,
+    isTemperatureValid,
     temperatureRxStr,
   } from '../helpers/validation';
   import type { TemperatureScales } from '../types/temperature.types';
@@ -28,7 +29,9 @@
     }
   });
 
-  temperatureStore.subscribe(temp => (valid = isTemperatureFormatValid(temp)));
+  temperatureStore.subscribe(
+    temp => (valid = isTemperatureValid(scaleName, temp)),
+  );
 
   const onKeyPress = (event: KeyboardEvent) => {
     if (!isNumericPeriodOrMinusOrPlus(event.code)) {
@@ -40,7 +43,6 @@
   const onInput = (scaleFrom: TemperatureScales, event: any) => {
     const target = (event as InputEvent).target;
     const value = (target as HTMLInputElement).value;
-    valid = isTemperatureFormatValid(value);
     recalculate(scaleFrom, value);
   };
 </script>

@@ -1,3 +1,4 @@
+import type { TemperatureScales } from './../types/temperature.types';
 import type { Temperatures } from '../types/temperature.types';
 export const temperatureRxStr = '^-?[0-9]*(.[0-9]*)?([Ee][+-][0-9]*)?$';
 export const temperatureRx = new RegExp(temperatureRxStr);
@@ -28,6 +29,14 @@ export const maxTemperatures: Temperatures = {
   celsius: '1.417e+32',
   fahrenheit: '2.5506e+32',
 };
+
+export const isTemperatureValid = (
+  scale: TemperatureScales,
+  temp: string,
+): boolean =>
+  isTemperatureFormatValid(temp) &&
+  !itsTooCold(scale, temp) &&
+  !itsTooHot(scale, temp);
 
 export const temperatureAlreadyHasTwoDigits = (value: string) => {
   const split = value.split('.');

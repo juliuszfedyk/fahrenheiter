@@ -43,7 +43,7 @@
     background-color: var(--theme-colors-primary);
   }
   button.success {
-    background-color: var(--theme-colors-secondary);
+    background-color: var(--theme-colors-primary_dark);
   }
   button.success img {
     filter: none;
