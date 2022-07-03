@@ -3,8 +3,9 @@
   import { recalculate } from '../helpers/recalculate';
 
   import ExampleCardImage from './exampleCardImage.svelte';
+  import type { ExampleTypes } from 'src/types/example.types';
 
-  export let name, type, temperatureK;
+  export let name: string, type: ExampleTypes, temperatureK: string;
   $: title =
     type === 'boiling-point'
       ? 'Boiling Point of ' + name

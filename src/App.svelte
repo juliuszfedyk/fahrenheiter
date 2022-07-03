@@ -6,7 +6,6 @@
   import { themes } from './themes/themes';
   import TemperatureSlider from './components/temperatureSlider.svelte';
   import ExampleCards from './components/exampleCards.svelte';
-  import CopyToClipboard from './components/copyToClipboard.svelte';
   import TemperatureDisplay from './components/temperatureDisplay.svelte';
 </script>
 

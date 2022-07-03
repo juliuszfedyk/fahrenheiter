@@ -35,9 +35,11 @@
       event.preventDefault();
     }
   };
-
-  const onInput = (scaleFrom: TemperatureScales, event: Event) => {
-    const value = (event.target as HTMLInputElement).value;
+  // Svelte event typing issue
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onInput = (scaleFrom: TemperatureScales, event: any) => {
+    const target = (event as InputEvent).target;
+    const value = (target as HTMLInputElement).value;
     valid = isTemperatureFormatValid(value);
     recalculate(scaleFrom, value);
   };

@@ -1,3 +1,4 @@
+import type { Formula } from './../types/temperature.types';
 import type { Formulas, TemperatureScales } from '../types/temperature.types';
 
 import temperatureStores from '../stores/temperatures';
@@ -23,7 +24,7 @@ export const recalculate = (
   temperature: string,
 ): void => {
   if (temperature === '') temperature = '0';
-  let temperatureNr = parseFloat(temperature);
+  const temperatureNr = parseFloat(temperature);
   const invalidFormat = !isTemperatureFormatValid(temperature);
   const tooCold = itsTooCold(scaleFrom, temperature);
   const tooHot = itsTooHot(scaleFrom, temperature);
@@ -33,6 +34,7 @@ export const recalculate = (
       temperatureStores[scale].update(() => temperature);
       return;
     }
+
     let newTemp: string;
     if (invalidFormat) {
       newTemp = "Sorry, can't process that :(";
@@ -41,8 +43,12 @@ export const recalculate = (
     } else if (tooHot) {
       newTemp = "That's impossibly hot :(";
     } else {
-      newTemp = formulas[scaleFrom][scale](temperatureNr).toFixed(2);
+      const formula: Formula = formulas[scaleFrom][scale] as
+        | Formula
+        | undefined;
+      if (!formula) return '';
+      newTemp = formula(temperatureNr).toFixed(2);
     }
-    temperatureStores[scale].update(() => newTemp);
+    temperatureStores[scale as TemperatureScales].update(() => newTemp);
   });
 };

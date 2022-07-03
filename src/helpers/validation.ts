@@ -6,10 +6,10 @@ export const isTemperatureFormatValid = (temp: string): boolean =>
   !!temp.match(temperatureRx)?.[0];
 
 export const itsTooCold = (scale: string, temp: string) =>
-  parseFloat(minTemperatures[scale]) > parseFloat(temp);
+  parseFloat(minTemperatures[scale] as string) > parseFloat(temp);
 
 export const itsTooHot = (scale: string, temp: string) =>
-  parseFloat(maxTemperatures[scale]) < parseFloat(temp);
+  parseFloat(maxTemperatures[scale] as string) < parseFloat(temp);
 
 export const isNumericPeriodOrMinusOrPlus = (keyCode: string) =>
   keyCode.includes('Digit') ||

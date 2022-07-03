@@ -4,9 +4,9 @@
 
   let copied: 'no' | 'yes' | 'failed' = 'no';
 
-  const onClick = async () => {
+  const onClick = async (): Promise<void> => {
     try {
-      navigator.clipboard.writeText(textToCopy);
+      await navigator.clipboard.writeText(textToCopy);
       copied = 'yes';
     } catch (e) {
       copied = 'failed';
