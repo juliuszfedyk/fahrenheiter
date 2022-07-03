@@ -37,7 +37,7 @@
     margin: var(--theme-spacings-large);
     margin-bottom: calc(var(--theme-spacings-large) * 2);
     background-color: var(--theme-colors-background-accent);
-    border-radius: 10px;
+    border-radius: var(--theme-borders-radius);
     box-sizing: border-box;
   }
 
@@ -50,7 +50,7 @@
 
   input[type='range']::-webkit-slider-runnable-track {
     background-color: var(--theme-colors-primary_dark);
-    border-radius: 5px;
+    border-radius: var(--theme-borders-radius);
     height: 20px;
   }
 
@@ -59,7 +59,7 @@
     appearance: none;
     width: 20px;
     height: 20px;
-    border-radius: 7px;
+    border-radius: var(--theme-borders-radius);
     background-color: var(--theme-colors-secondary);
     cursor: pointer;
   }

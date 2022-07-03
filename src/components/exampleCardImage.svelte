@@ -26,7 +26,7 @@
   img {
     width: 20px;
     height: 20px;
-    margin-right: 3px;
+    margin-right: var(--theme-spacings-small);
     filter: var(--theme-images-black_icon_filter);
     -webkit-filter: var(--theme-images-black_icon_filter);
   }

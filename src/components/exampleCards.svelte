@@ -38,10 +38,14 @@
     box-sizing: border-box;
     background-color: var(--theme-colors-background);
     border: 2px solid var(--theme-colors-secondary);
-    border-radius: 5px;
-    padding: 8px;
+    border-radius: var(--theme-borders-radius);
+    padding: var(--theme-spacings-large);
     font-size: var(--theme-fonts-sizes-medium);
     color: var(--theme-colors-secondary);
     outline: none;
+  }
+
+  input:focus {
+    border: 2px solid var(--theme-colors-primary_dark);
   }
 </style>

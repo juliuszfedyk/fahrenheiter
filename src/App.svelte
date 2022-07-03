@@ -52,8 +52,24 @@
       'Helvetica Neue', sans-serif;
   }
 
+  :global(input[type='text']) {
+    background-color: var(--theme-colors-background);
+    border: 2px solid var(--theme-colors-primary_dark);
+    border-radius: var(--theme-borders-radius);
+    padding: var(--theme-spacings-large);
+    font-size: var(--theme-fonts-sizes-medium);
+    color: var(--theme-colors-secondary);
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  :global(input[type='text']:focus) {
+    background-color: var(--theme-colors-background);
+    border: 2px solid var(--theme-colors-secondary);
+  }
+
   main {
-    padding: 1em;
+    padding: var(--theme-spacings-large);
     margin: 0 auto;
     display: flex;
     flex-direction: column;

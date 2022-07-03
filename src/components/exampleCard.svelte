@@ -34,11 +34,14 @@
     box-sizing: border-box;
     color: var(--theme-colors-text);
     font-size: var(--theme-fonts-sizes-medium);
+    transition: all 0.5s;
   }
   .exampleCard:focus {
     outline: 2px solid var(--theme-colors-primary_dark);
   }
   .exampleCard.active {
     border: 2px solid var(--theme-colors-secondary);
+    background-color: var(--theme-colors-background-dark);
+    outline: none;
   }
 </style>

@@ -61,24 +61,19 @@
 
 <style>
   input {
-    background-color: var(--theme-colors-background);
-    border: 2px solid var(--theme-colors-secondary);
-    border-radius: 5px;
-    padding: 8px;
-    font-size: var(--theme-fonts-sizes-medium);
-    color: var(--theme-colors-secondary);
-    outline: none;
     text-align: end;
     margin-left: var(--theme-spacings-large);
-    box-sizing: border-box;
     min-width: 70%;
+  }
+
+  input:focus {
   }
 
   .inputWrapper {
     margin: var(--theme-spacings-small);
     padding: var(--theme-spacings-large);
     background-color: var(--theme-colors-background-accent);
-    border-radius: 5px;
+    border-radius: var(--theme-borders-radius);
     display: flex;
     flex-direction: row;
     width: 100%;
