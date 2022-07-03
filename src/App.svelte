@@ -5,6 +5,7 @@
   import { ThemeWrapper, ThemeToggle } from 'svelte-themer';
   import { themes } from './themes/themes';
   import TemperatureSlider from './components/temperatureSlider.svelte';
+  import ExampleCards from './components/exampleCards.svelte';
 </script>
 
 <main>
@@ -26,9 +27,21 @@
       </div>
     </div>
     <TemperatureSlider />
+    <ExampleCards />
   </ThemeWrapper>
 
   <div class="credits">
+    <div>
+      Icons made by <a
+        href="https://www.flaticon.com/authors/good-ware"
+        title="Good Ware">Good Ware</a
+      >
+      and by <a href="https://www.freepik.com" title="Freepik">Freepik</a>
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+  </div>
+  <div class="links">
     <a href="https://github.com/juliuszfedyk/fahrenheiter">github</a>
   </div>
 </main>
@@ -94,6 +107,13 @@
   }
 
   .credits {
+    font-size: small;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .links {
     position: fixed;
     bottom: 10px;
     right: 10px;

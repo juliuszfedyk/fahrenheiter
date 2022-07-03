@@ -1,4 +1,4 @@
-import type { theme } from '../types/theme.types';
+import type { Theme } from '../types/theme.types';
 
 const colors = {
   imperialRed: '#e63946ff',
@@ -9,7 +9,7 @@ const colors = {
   veryDarkBlue: '#0f1b2c',
 };
 
-export const themes: { [themeName: string]: theme } = {
+export const themes: { [themeName: string]: Theme } = {
   light: {
     colors: {
       text: colors.veryDarkBlue,
@@ -22,6 +22,9 @@ export const themes: { [themeName: string]: theme } = {
       primary_dark: colors.prussianBlue,
       secondary: colors.celadonBlue,
     },
+    borders: { radius: '10px' },
+    spacings: { large: '10px', small: '5px' },
+    images: { black_icon_filter: 'none' },
   },
   dark: {
     colors: {
@@ -35,5 +38,8 @@ export const themes: { [themeName: string]: theme } = {
       primary_dark: colors.celadonBlue,
       secondary: colors.powderBlue,
     },
+    borders: { radius: '10px' },
+    spacings: { large: '10px', small: '5px' },
+    images: { black_icon_filter: 'invert(1)' },
   },
 };

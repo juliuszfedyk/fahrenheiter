@@ -1,4 +1,4 @@
-export type theme = {
+export type Theme = {
   colors: {
     text: string;
     background: {
@@ -10,4 +10,12 @@ export type theme = {
     primary_dark: string;
     secondary: string;
   };
+  borders: {
+    radius: string;
+  };
+  spacings: {
+    small: string;
+    large: string;
+  };
+  images: { black_icon_filter: string };
 };

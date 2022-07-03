@@ -4,7 +4,7 @@
   import type { Writable } from 'svelte/store';
   import { recalculate } from '../helpers/recalculate';
   import {
-    isNumericPeriodOrMinus,
+    isNumericPeriodOrMinusOrPlus,
     isTemperatureFormatValid,
     temperatureRxStr,
   } from '../helpers/validation';
@@ -31,7 +31,7 @@
   temperatureStore.subscribe(temp => (valid = isTemperatureFormatValid(temp)));
 
   const onKeyPress = (event: KeyboardEvent) => {
-    if (!isNumericPeriodOrMinus(event.code)) {
+    if (!isNumericPeriodOrMinusOrPlus(event.code)) {
       event.preventDefault();
     }
   };
@@ -67,11 +67,12 @@
     color: var(--theme-colors-secondary);
     outline: none;
     text-align: end;
+    margin-top: var(--theme-spacings-small);
   }
 
   .inputWrapper {
-    margin: 5px;
-    padding: 5px;
+    margin: var(--theme-spacings-small);
+    padding: var(--theme-spacings-large);
     background-color: var(--theme-colors-background-accent);
     border-radius: 5px;
   }
