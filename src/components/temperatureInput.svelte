@@ -44,7 +44,7 @@
 </script>
 
 <div class="inputWrapper" class:invalid={!valid}>
-  <label for={scaleName}>{scaleName}</label><br />
+  <label for={scaleName}>{scaleName}</label>
   <input
     type="text"
     bind:this={input}
@@ -67,7 +67,9 @@
     color: var(--theme-colors-secondary);
     outline: none;
     text-align: end;
-    margin-top: var(--theme-spacings-small);
+    margin-left: var(--theme-spacings-large);
+    box-sizing: border-box;
+    min-width: 70%;
   }
 
   .inputWrapper {
@@ -75,17 +77,32 @@
     padding: var(--theme-spacings-large);
     background-color: var(--theme-colors-background-accent);
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: baseline;
   }
 
-  .inputWrapper:first-child {
-    margin-left: 0;
-  }
+  @media (min-width: 800px) {
+    .inputWrapper {
+      flex-direction: column;
+      width: 30%;
+    }
 
-  .inputWrapper:last-child {
-    margin-right: 0;
-  }
+    .inputWrapper:first-child {
+      margin-left: 0;
+    }
 
-  .inputWrapper.invalid {
-    background-color: var(--theme-colors-primary);
+    .inputWrapper:last-child {
+      margin-right: 0;
+    }
+
+    .inputWrapper.invalid {
+      background-color: var(--theme-colors-primary);
+    }
+    input {
+      margin: 0;
+    }
   }
 </style>
