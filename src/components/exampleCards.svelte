@@ -40,7 +40,7 @@
     border: 2px solid var(--theme-colors-secondary);
     border-radius: 5px;
     padding: 8px;
-    font-size: 18px;
+    font-size: var(--theme-fonts-sizes-medium);
     color: var(--theme-colors-secondary);
     outline: none;
     text-align: end;

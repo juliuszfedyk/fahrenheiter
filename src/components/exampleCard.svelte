@@ -2,7 +2,6 @@
   import { kelvin } from '../stores/temperatures';
   import { recalculate } from '../helpers/recalculate';
 
-  import type { Example } from '../types/example.types';
   import ExampleCardImage from './exampleCardImage.svelte';
 
   export let name, type, temperatureK;
@@ -33,7 +32,7 @@
     flex-grow: 1;
     box-sizing: border-box;
     color: var(--theme-colors-text);
-    font-size: 16px;
+    font-size: var(--theme-fonts-sizes-medium);
   }
   .exampleCard:focus {
     outline: 2px solid var(--theme-colors-primary_dark);

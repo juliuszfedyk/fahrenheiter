@@ -18,4 +18,7 @@ export type Theme = {
     large: string;
   };
   images: { black_icon_filter: string };
+  fonts: {
+    sizes: { small: string; medium: string; large: string; x_large: string };
+  };
 };

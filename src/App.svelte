@@ -48,7 +48,7 @@
   :global(html) {
     background-color: var(--theme-colors-background, initial);
     color: var(--theme-colors-text, initial);
-    font-size: 18px;
+    font-size: var(--theme-fonts-sizes-medium);
     font-family: 'PT Sans Narrow', sans-serif, Ubuntu, Cantarell, 'Open Sans',
       'Helvetica Neue', sans-serif;
   }
@@ -66,7 +66,7 @@
   h1 {
     color: var(--theme-colors-primary);
     text-transform: uppercase;
-    font-size: 32px;
+    font-size: var(--theme-fonts-sizes-large);
     font-weight: 100;
     line-height: 48px;
     font-family: 'Nixie One', cursive;
@@ -89,13 +89,9 @@
     align-items: center;
   }
 
-  .values div {
-    padding: 5px;
-  }
-
   @media (min-width: 800px) {
     h1 {
-      font-size: 48px;
+      font-size: var(--theme-fonts-sizes-x_large);
     }
     .values {
       flex-direction: row;

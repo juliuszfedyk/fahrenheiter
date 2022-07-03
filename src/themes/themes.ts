@@ -25,6 +25,9 @@ export const themes: { [themeName: string]: Theme } = {
     borders: { radius: '10px' },
     spacings: { large: '10px', small: '5px' },
     images: { black_icon_filter: 'none' },
+    fonts: {
+      sizes: { small: '12px', medium: '18px', large: '32px', x_large: '48px' },
+    },
   },
   dark: {
     colors: {
@@ -41,5 +44,8 @@ export const themes: { [themeName: string]: Theme } = {
     borders: { radius: '10px' },
     spacings: { large: '10px', small: '5px' },
     images: { black_icon_filter: 'invert(1)' },
+    fonts: {
+      sizes: { small: '12px', medium: '18px', large: '32px', x_large: '48px' },
+    },
   },
 };

@@ -20,7 +20,7 @@
 
 <style>
   .exampleImages {
-    font-size: 20px;
+    font-size: var(--theme-fonts-sizes-medium);
     min-width: 80px;
   }
   img {
