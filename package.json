@@ -16,10 +16,11 @@
     "build": "vite build",
     "prebuild": "npm run check",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json && npm run eslint && npm run prettier",
+    "check": "svelte-check --tsconfig ./tsconfig.json && npm run eslint",
     "eslint": "eslint .",
     "prepare": "husky install",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "precommit": "npm run prettier && npm run check"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
