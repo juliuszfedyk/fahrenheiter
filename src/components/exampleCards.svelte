@@ -22,9 +22,10 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: var(--theme-spacings-large);
   }
   .searchBar {
+    box-sizing: border-box;
     width: 100%;
     background-color: var(--theme-colors-background-accent);
     padding: var(--theme-spacings-large);
@@ -32,9 +33,14 @@
     display: flex;
     align-items: baseline;
   }
+  .searchBar span {
+    flex-shrink: 0;
+  }
   input {
     margin-left: var(--theme-spacings-small);
     flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   input:focus {
