@@ -1,11 +1,13 @@
 <script lang="ts">
   import TemperatureInputs from './components/temperatureInputs.svelte';
   import type {} from './types/temperature.types';
-  import { kelvin, celsius, fahrenheit } from './stores/temperatures';
+  import temperatureStores from './stores/temperatures';
   import { ThemeWrapper, ThemeToggle } from 'svelte-themer';
   import { themes } from './themes/themes';
   import TemperatureSlider from './components/temperatureSlider.svelte';
   import ExampleCards from './components/exampleCards.svelte';
+  import CopyToClipboard from './components/copyToClipboard.svelte';
+  import TemperatureDisplay from './components/temperatureDisplay.svelte';
 </script>
 
 <main>
@@ -16,15 +18,9 @@
     <h1>Fahrenheiter</h1>
     <TemperatureInputs />
     <div class="values">
-      <div>
-        {$kelvin}&deg;K
-      </div>
-      <div>
-        {$celsius}&deg;C
-      </div>
-      <div>
-        {$fahrenheit}&deg;F
-      </div>
+      {#each Object.entries(temperatureStores) as [scale, temperatureStore]}
+        <TemperatureDisplay {temperatureStore} {scale} />
+      {/each}
     </div>
     <TemperatureSlider />
     <ExampleCards />
