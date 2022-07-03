@@ -42,7 +42,7 @@
   }
 
   input[type='range'] {
-    -webkit-appearance: none; /* Override default CSS styles */
+    -webkit-appearance: none;
     appearance: none;
     width: 100%;
     background: transparent;

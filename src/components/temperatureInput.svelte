@@ -66,9 +66,6 @@
     min-width: 70%;
   }
 
-  input:focus {
-  }
-
   .inputWrapper {
     margin: var(--theme-spacings-small);
     padding: var(--theme-spacings-large);
