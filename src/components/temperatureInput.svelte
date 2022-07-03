@@ -5,7 +5,6 @@
   import { recalculate } from '../helpers/recalculate';
   import {
     isNumericPeriodOrMinusOrPlus,
-    isTemperatureFormatValid,
     isTemperatureValid,
     temperatureRxStr,
   } from '../helpers/validation';
