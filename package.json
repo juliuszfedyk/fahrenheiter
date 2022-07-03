@@ -16,8 +16,9 @@
     "build": "vite build",
     "prebuild": "npm run check",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "eslint": "eslint ."
+    "check": "svelte-check --tsconfig ./tsconfig.json && npm run eslint",
+    "eslint": "eslint .",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
@@ -26,6 +27,7 @@
     "@typescript-eslint/parser": "^5.30.4",
     "eslint": "^8.19.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "husky": "^8.0.1",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.7",
     "svelte-preprocess": "^4.9.8",
