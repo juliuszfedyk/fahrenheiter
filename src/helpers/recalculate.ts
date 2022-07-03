@@ -27,6 +27,7 @@ export const recalculate = (
   const invalidFormat = !isTemperatureFormatValid(temperature);
   const tooCold = itsTooCold(scaleFrom, temperature);
   const tooHot = itsTooHot(scaleFrom, temperature);
+
   Object.keys(temperatureStores).forEach(scale => {
     if (scale === scaleFrom) {
       temperatureStores[scale].update(() => temperature);

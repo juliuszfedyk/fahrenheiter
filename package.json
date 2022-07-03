@@ -1,7 +1,15 @@
 {
   "name": "fahrenheiter",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0",
+  "description": "A simple app that calculates temperature in different scales",
+  "author": {
+    "name": "Juliusz Fedyk",
+    "url": "https://github.com/juliuszfedyk"
+  },
+  "engines": {
+    "node": ">=16.15.1"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -21,7 +29,6 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
-    "color-temperature": "^0.2.7",
     "svelte-themer": "^0.5.5"
   }
 }

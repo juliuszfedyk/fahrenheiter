@@ -33,6 +33,8 @@ For theming I found [this article](https://dev.to/josef/theming-in-svelte-with-c
 
 Colors were taken from [this pattern](https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557)
 
+Developed with node `18.4.0`, should work with LTS
+
 ## The good and the bad
 
 - I had to move from Webstorm to VSCode, as Svelte + Pretter + Webstorm did not work.
@@ -41,5 +43,4 @@ Colors were taken from [this pattern](https://coolors.co/palette/e63946-f1faee-a
 - It took me under 10 hours, which I think is the beauty of writting small projects using Svelte.
 - I worked alone so I decided to simply commit straight to the `main` branch.
 - I have a lot of extra fun ideas I could add to it, and maybe I will if I'll have some free time.
-- TODO: add eslint and check in githooks: commit
-- TODO: add a color change based on Kelvin temperature to some elements.
+- As Added feature I implemented some examples of metling / boiling points.

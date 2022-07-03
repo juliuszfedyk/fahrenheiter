@@ -5,8 +5,7 @@
   import type { Example } from '../types/example.types';
   import ExampleCardImage from './exampleCardImage.svelte';
 
-  export let example: Example;
-  const { name, type, temperatureK } = example;
+  export let name, type, temperatureK;
   $: title =
     type === 'boiling-point'
       ? 'Boiling Point of ' + name

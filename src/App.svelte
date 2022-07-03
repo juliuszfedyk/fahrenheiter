@@ -106,16 +106,22 @@
     }
   }
 
-  .credits {
+  .credits,
+  .links {
+    background-color: var(--theme-colors-background);
+    padding: var(--theme-spacings-small);
     font-size: small;
+  }
+
+  .credits {
     position: fixed;
-    bottom: 10px;
-    left: 10px;
+    bottom: 0;
+    left: 0;
   }
 
   .links {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0;
+    right: 0;
   }
 </style>

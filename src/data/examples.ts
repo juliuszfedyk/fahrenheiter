@@ -1,5 +1,5 @@
 import type { Example } from './../types/example.types';
-export const examples: Example[] = [
+export const examplesData: Example[] = [
   {
     name: 'H2O',
     type: 'melting-point',
